@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.whx.animpractice.FlowLayout
+        android:id="@+id/container233"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:canExpand="false">
+        <Button
+            android:id="@+id/to_appbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="app_bar"/>
+        <Button
+            android:id="@+id/to_bottom_behavior"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="to_bottom_behavior"/>
+        <Button
+            android:id="@+id/to_swipe_behavior"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="to_swipe"/>
+
+        <Button
+            android:id="@+id/to_value_anim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="to_value_anim"/>
+
+        <Button
+            android:id="@+id/to_object_anim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="to_obj_anim"/>
+
+        <Button
+            android:id="@+id/to_transition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="to_transition"/>
+    </com.whx.animpractice.FlowLayout>
+
+</android.support.constraint.ConstraintLayout>

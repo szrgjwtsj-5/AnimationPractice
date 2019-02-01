@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Button
+        android:id="@+id/bottom_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="show bottom"/>
+
+    <Button
+        android:id="@+id/bottom_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="show dialog"/>
+    <!--<include-->
+        <!--android:id="@+id/bottom_view"-->
+        <!--layout="@layout/bottom_dialog"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--app:layout_behavior="@string/bottom_sheet_behavior"-->
+        <!--app:behavior_peekHeight="0dp"/>-->
+
+</LinearLayout>

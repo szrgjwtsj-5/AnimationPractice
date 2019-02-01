@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/auto_transition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_10"
+        android:text="AutoTransition" />
+
+    <TextView
+        android:id="@+id/change_bounds"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_10"
+        android:text="ChangeBounds" />
+
+    <TextView
+        android:id="@+id/change_transform"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_10"
+        android:text="ChangeTransform" />
+
+    <TextView
+        android:id="@+id/change_clip_bounds"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_10"
+        android:text="ChangeClipBounds" />
+
+    <TextView
+        android:id="@+id/change_image_transform"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_10"
+        android:text="ChangeImageTransform" />
+
+    <TextView
+        android:id="@+id/visible_transition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_10"
+        android:text="visible_transition" />
+
+    <TextView
+        android:id="@+id/transition_set"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_10"
+        android:text="多个动画效果组合" />
+</LinearLayout>

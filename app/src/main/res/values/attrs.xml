@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FlowLayout">
+        <attr name="childGravity" format="enum">
+            <enum name="top" value="0" />
+            <enum name="center_vertical" value="1" />
+            <enum name="bottom" value="2" />
+        </attr>
+        <attr name="lineSpace" format="dimension"/>
+        <attr name="canExpand" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="EasyPickerView">
+        <attr name="epvTextSize" format="dimension"/>
+        <attr name="epvTextColor" format="color"/>
+        <attr name="epvTextPadding" format="dimension"/>
+        <attr name="epvTextMaxScale" format="float"/>
+        <attr name="epvTextMinAlpha" format="float"/>
+        <attr name="epvRecycleMode" format="boolean"/>
+        <attr name="epvMaxShowNum" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="WheelView">
+        <attr name="wvTextSize" format="dimension"/>
+        <attr name="wvTextColor" format="color"/>
+        <attr name="wvTextPadding" format="dimension"/>
+        <attr name="wvTextMaxScale" format="float"/>
+        <attr name="wvTextMinAlpha" format="float"/>
+        <attr name="wvRecycleMode" format="boolean"/>
+        <attr name="wvMaxShowNum" format="integer"/>
+    </declare-styleable>
+</resources>
