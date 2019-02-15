@@ -15,9 +15,9 @@ import com.whx.animpractice.transition.share_element.RecyclerActivity
 class TransitionActivityA : AppCompatActivity() {
 
     private val explodeCode by lazy { findViewById<Button>(R.id.explode_code) }
-    private val sceneTest by lazy { findViewById<Button>(R.id.explode_xml) }
+    private val sceneTest by lazy { findViewById<Button>(R.id.scene_test) }
     private val slideCode by lazy { findViewById<Button>(R.id.slide_code) }
-    private val slideXml by lazy { findViewById<Button>(R.id.slide_code) }
+    private val fadeBtn by lazy { findViewById<Button>(R.id.fade) }
     private val exit by lazy { findViewById<Button>(R.id.exit_a) }
     private val toRecycler by lazy { findViewById<Button>(R.id.to_recycler) }
 

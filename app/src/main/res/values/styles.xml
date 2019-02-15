@@ -24,6 +24,11 @@
         <item name="android:windowExitTransition">@transition/explode</item>
     </style>
 
+    <style name="AppTheme.Slide" parent="AppTheme">
+        <!--<item name="android:windowEnterTransition">@transition/slide</item>-->
+        <item name="android:windowEnterTransition">@transition/tran_set</item>
+    </style>
+
     <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
@@ -34,8 +39,19 @@
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 
+    <style name="CustomChange" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:windowAnimationStyle">@style/Animation.Activity.Customer</item>
+    </style>
+
     <style name="Animation.Activity.Customer" parent="@android:style/Animation.Activity">
-        
+        <!-- 进入一个新的Activity的时候，A->B B进入动画 -->
+        <item name="android:activityOpenEnterAnimation">@anim/right_in</item>
+        <!-- 进入一个新的Activity的时候，A->B A退出动画 -->
+        <item name="android:activityOpenExitAnimation">@anim/left_out</item>
+        <!-- 退出一个Activity的时候，B返回到A A进入动画 -->
+        <item name="android:activityCloseEnterAnimation">@anim/left_in</item>
+        <!-- 退出一个Activity的时候，B返回到A B退出动画 -->
+        <item name="android:activityCloseExitAnimation">@anim/right_out</item>
     </style>
 
 </resources>

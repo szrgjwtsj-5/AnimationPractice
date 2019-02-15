@@ -10,9 +10,10 @@ import com.whx.animpractice.behavior.SwipeBehaviorActivity;
 import com.whx.animpractice.property.ObjectAnimatorTestActivity;
 import com.whx.animpractice.property.ValueAnimatorTestActivity;
 import com.whx.animpractice.transition.TransitionActivityA;
+import com.whx.animpractice.transition.change_activity.SwitchAnimActivity;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
 
     @Override
@@ -32,5 +33,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.to_object_anim).setOnClickListener(v -> startActivity(new Intent(this, ObjectAnimatorTestActivity.class)));
 
         findViewById(R.id.to_transition).setOnClickListener(v -> startActivity(new Intent(this, TransitionActivityA.class)));
+
+        findViewById(R.id.to_activity_switch).setOnClickListener(v -> startActivity(new Intent(this, SwitchAnimActivity.class)));
     }
 }
