@@ -9,7 +9,7 @@ import android.support.annotation.RequiresApi
 import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import android.widget.ImageView
+import android.view.ViewTreeObserver
 import com.whx.animpractice.R
 
 class PreviewActivity : AppCompatActivity(), MyPageAdapter.OnImageLoadComplete {
@@ -55,17 +55,17 @@ class PreviewActivity : AppCompatActivity(), MyPageAdapter.OnImageLoadComplete {
 
     override fun startEnterTransition() {
         startPostponedEnterTransition()
-//        if (startPos == curPos) {
-//            val mAlbumImage = mAdapter?.getItemView()
-//
-//            mAlbumImage?.viewTreeObserver?.addOnPreDrawListener(object : ViewTreeObserver.OnPreDrawListener {
-//                override fun onPreDraw(): Boolean {
-//                    mAlbumImage.viewTreeObserver.removeOnPreDrawListener(this)
-//                    startPostponedEnterTransition()
-//                    return true
-//                }
-//            })
-//        }
+        if (startPos == curPos) {
+            val mAlbumImage = mAdapter?.getItemView()
+
+            mAlbumImage?.viewTreeObserver?.addOnPreDrawListener(object : ViewTreeObserver.OnPreDrawListener {
+                override fun onPreDraw(): Boolean {
+                    mAlbumImage.viewTreeObserver.removeOnPreDrawListener(this)
+                    startPostponedEnterTransition()
+                    return true
+                }
+            })
+        }
     }
 
     override fun finishAfterTransition() {
@@ -84,12 +84,12 @@ class PreviewActivity : AppCompatActivity(), MyPageAdapter.OnImageLoadComplete {
         setEnterSharedElementCallback(object : SharedElementCallback() {
             override fun onMapSharedElements(names: MutableList<String>?, sharedElements: MutableMap<String, View>?) {
                 if (mIsReturning) {
-                    val sharedElement = viewPager.getChildAt(curPos) as? ImageView
+                    val sharedElement = mAdapter?.getCurrentView()
 
                     if (sharedElement == null) {
                         names?.clear()
                         sharedElements?.clear()
-                    } else if (startPos == curPos) {
+                    } else if (startPos != curPos) {
                         names?.clear()
                         names?.add(sharedElement.transitionName)
                         sharedElements?.clear()

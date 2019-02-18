@@ -15,6 +15,7 @@ class MyPageAdapter(private val imageLoadComplete: OnImageLoadComplete) : PagerA
 
     private val data = arrayListOf<String>()
     private var itemView: ImageView? = null
+    private var currentView: ImageView? = null
 
     override fun getCount() = data.size
 
@@ -47,9 +48,14 @@ class MyPageAdapter(private val imageLoadComplete: OnImageLoadComplete) : PagerA
         }
     }
 
-    fun getItemView(): ImageView? {
-        return itemView
+    override fun setPrimaryItem(container: ViewGroup?, position: Int, `object`: Any?) {
+        super.setPrimaryItem(container, position, `object`)
+        currentView = `object` as ImageView
     }
+
+    fun getCurrentView(): ImageView? = currentView
+
+    fun getItemView() = itemView
 
     fun setData(data: List<String>?) {
         data?.let {

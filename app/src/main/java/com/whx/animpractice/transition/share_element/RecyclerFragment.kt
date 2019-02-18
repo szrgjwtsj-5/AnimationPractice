@@ -26,7 +26,7 @@ class RecyclerFragment : Fragment(), MyRecyclerAdapter.ItemClickListener {
     }
 
     private val recyclerView by lazy { view?.findViewById<RecyclerView>(R.id.recyclerView) }
-    private var adapter: MyRecyclerAdapter? = null
+
     private var urls: ArrayList<String>? = null
     private var mReenterState: Bundle? = null
 
@@ -113,10 +113,10 @@ class RecyclerFragment : Fragment(), MyRecyclerAdapter.ItemClickListener {
                 "https://ww1.sinaimg.cn/large/0065oQSqly1ft5q7ys128j30sg10gnk5.jpg",
                 "https://ww1.sinaimg.cn/large/0065oQSqgy1ft4kqrmb9bj30sg10fdzq.jpg")
 
-        adapter = MyRecyclerAdapter()
+        val adapter = MyRecyclerAdapter()
         recyclerView?.adapter = adapter
-        adapter?.setData(urls)
-        adapter?.setOnItemClickListener(this)
+        adapter.setData(urls)
+        adapter.setOnItemClickListener(this)
     }
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
@@ -130,17 +130,14 @@ class RecyclerFragment : Fragment(), MyRecyclerAdapter.ItemClickListener {
             if (startPos != curPos) {
                 recyclerView?.scrollToPosition(curPos)
             }
-            postponeEnterTransition()
+            activity.postponeEnterTransition()
 
             recyclerView?.viewTreeObserver?.addOnPreDrawListener(object : ViewTreeObserver.OnPreDrawListener{
                 override fun onPreDraw(): Boolean {
                     recyclerView?.viewTreeObserver?.removeOnPreDrawListener(this)
                     recyclerView?.requestLayout()
 
-                    val image = recyclerView?.findViewHolderForAdapterPosition(curPos)?.itemView?.findViewById<ImageView>(R.id.item_image)
-                    println(image?.drawable)
-
-                    startPostponedEnterTransition()
+                    activity.startPostponedEnterTransition()
                     return true
                 }
             })

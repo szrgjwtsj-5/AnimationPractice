@@ -44,15 +44,6 @@
 
         <activity android:name=".transition.share_element.PreviewActivity"/>
 
-        <activity android:name=".transition.share_element.ActivityBrowse"
-            android:theme="@style/AppTheme"/>
-        <activity android:name=".transition.share_element.BrowseShareElementTransitionActivity"
-            android:theme="@style/AppTheme"/>
-
-        <activity android:name=".transition.share_element.PreviewActivity2"/>
-
-        <activity android:name=".transition.share_element.RecyclerActivity2"/>
-
         <activity android:name=".transition.scene.SceneMainActivity"/>
 
         <activity android:name=".transition.scene.AutoTransitionActivity"/>
