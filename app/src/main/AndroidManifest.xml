@@ -63,6 +63,10 @@
         <activity android:name=".transition.change_activity.SwitchAnimTargetActivity"
             android:theme="@style/AppTheme.Slide"/>
 
+        <activity android:name=".transition.share_element.SimpleShareElementActivity"/>
+
+        <activity android:name=".transition.share_element.SimpleAnotherActivity"/>
+
     </application>
 
 </manifest>

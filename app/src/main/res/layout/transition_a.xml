@@ -64,4 +64,12 @@
         app:layout_constraintLeft_toLeftOf="parent"
         android:text="to_recycler"/>
 
+    <Button
+        android:id="@+id/to_simple_share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/to_recycler"
+        app:layout_constraintTop_toTopOf="@+id/to_recycler"
+        android:text="to_simple_share"/>
+
 </android.support.constraint.ConstraintLayout>

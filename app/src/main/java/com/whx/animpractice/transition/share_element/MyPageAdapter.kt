@@ -1,11 +1,13 @@
 package com.whx.animpractice.transition.share_element
 
 import android.support.v4.view.PagerAdapter
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
+import com.whx.animpractice.R
 
 class MyPageAdapter(private val imageLoadComplete: OnImageLoadComplete) : PagerAdapter() {
 
@@ -22,13 +24,15 @@ class MyPageAdapter(private val imageLoadComplete: OnImageLoadComplete) : PagerA
     override fun isViewFromObject(view: View?, obj: Any?) = view == obj
 
     override fun instantiateItem(container: ViewGroup?, position: Int): Any {
-        val imageView = ImageView(container?.context)
-        imageView.scaleType = ImageView.ScaleType.CENTER_CROP
-        imageView.transitionName = data[position]
+//        val imageView = ImageView(container?.context)
+//        imageView.scaleType = ImageView.ScaleType.CENTER_CROP
 
+        val view = LayoutInflater.from(container?.context).inflate(R.layout.single_image, container, false)
+        val imageView = view.findViewById<ImageView>(R.id.single_image)
+        imageView.transitionName = data[position]
         itemView = imageView
 
-        container?.addView(imageView)
+        container?.addView(view)
 
         Picasso.get().load(data[position]).into(imageView, object : Callback {
             override fun onSuccess() {
@@ -39,7 +43,7 @@ class MyPageAdapter(private val imageLoadComplete: OnImageLoadComplete) : PagerA
                 imageLoadComplete.startEnterTransition()
             }
         })
-        return imageView
+        return view
     }
 
     override fun destroyItem(container: ViewGroup?, position: Int, `object`: Any?) {
@@ -50,7 +54,7 @@ class MyPageAdapter(private val imageLoadComplete: OnImageLoadComplete) : PagerA
 
     override fun setPrimaryItem(container: ViewGroup?, position: Int, `object`: Any?) {
         super.setPrimaryItem(container, position, `object`)
-        currentView = `object` as ImageView
+        currentView = (`object` as View).findViewById(R.id.single_image)
     }
 
     fun getCurrentView(): ImageView? = currentView

@@ -11,6 +11,8 @@ import com.whx.animpractice.R
 import com.whx.animpractice.transition.change_activity.MakeSceneTransitionActivity
 import com.whx.animpractice.transition.scene.SceneMainActivity
 import com.whx.animpractice.transition.share_element.RecyclerActivity
+import com.whx.animpractice.transition.share_element.SimpleAnotherActivity
+import com.whx.animpractice.transition.share_element.SimpleShareElementActivity
 
 class TransitionActivityA : AppCompatActivity() {
 
@@ -20,6 +22,7 @@ class TransitionActivityA : AppCompatActivity() {
     private val fadeBtn by lazy { findViewById<Button>(R.id.fade) }
     private val exit by lazy { findViewById<Button>(R.id.exit_a) }
     private val toRecycler by lazy { findViewById<Button>(R.id.to_recycler) }
+    private val toSimpleShare by lazy { findViewById<Button>(R.id.to_simple_share) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,6 +43,8 @@ class TransitionActivityA : AppCompatActivity() {
         toRecycler.setOnClickListener { startActivity(Intent(this, RecyclerActivity::class.java)) }
 
         sceneTest.setOnClickListener { startActivity(Intent(this, SceneMainActivity::class.java)) }
+
+        toSimpleShare.setOnClickListener { startActivity(Intent(this, SimpleShareElementActivity::class.java)) }
     }
 
     private fun setupWindowAnimations() {
